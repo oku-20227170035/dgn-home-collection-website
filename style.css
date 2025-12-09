@@ -1,0 +1,360 @@
+/* style.css */
+
+:root {
+    /* Genel Renk Paleti */
+    --color-black: #1a1a1a;
+    --color-white: #ffffff;
+    --color-gray: #555555;
+    --color-light-gray: #f4f4f4;
+    
+    /* Canlı Vurgu Renkleri */
+    --color-accent: #2c3e50; /* Koyu Lacivert/Mavi (Ana Vurgu) */
+    --color-light-blue: #3498db; /* Canlı Mavi (İkincil Vurgu) */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* ARKA PLAN DESENİ BURAYA EKLENDİ */
+    background-color: var(--color-light-gray); /* Fallback */
+    background-image: url('arka_plan_desen.jpg'); 
+    background-repeat: repeat;
+    background-attachment: fixed; /* Arka planın sabit kalmasını sağlar */
+    
+    color: var(--color-black);
+    line-height: 1.6;
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* HEADER (Üst Alan) */
+header {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-light-gray);
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-accent); /* Logo Vurgu Renginde */
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-black);
+    margin-left: 30px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+nav ul li a:hover {
+    color: var(--color-accent); /* Menü Animasyonu */
+}
+
+/* HERO SECTION (Slayt Gösterisi Alanı) */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('hali_slayt_görsel_1.jpg') no-repeat center center;
+    background-size: cover;
+    color: var(--color-white);
+    padding: 180px 0;
+    text-align: center;
+    animation: slideIn 1s ease-out; /* Giriş Animasyonu */
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+    font-size: 58px;
+    color: var(--color-light-blue); /* Canlı Renk */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 22px;
+    color: var(--color-white);
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 12px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 2px solid var(--color-accent);
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    border-color: var(--color-light-blue);
+    color: var(--color-light-blue);
+    transform: scale(1.05); /* Buton Animasyonu */
+}
+
+/* GENEL İÇERİK STİLLERİ */
+.content-section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: var(--color-accent); /* Başlıklar Vurgu Renginde */
+}
+
+/* ÜRÜN GRID */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.product-item {
+    flex: 1 1 calc(33.333% - 20px);
+    text-align: center;
+    border: 1px solid var(--color-light-gray);
+    padding-bottom: 20px;
+    background-color: var(--color-white); /* Okunurluk için beyaz kaldı */
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.product-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px); /* Kart Animasyonu */
+}
+
+.product-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 15px;
+    background-color: var(--color-light-gray);
+}
+
+.product-item h3 {
+    font-size: 18px;
+    color: var(--color-black);
+    margin: 0 0 5px 0;
+}
+
+.product-item p {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-light-blue); /* Fiyatlar Canlı Renk */
+}
+
+/* PAZAR YERLERİ STİLİ */
+.pazar-vurgu {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 40px 0;
+    text-align: center;
+}
+.pazar-vurgu h2 {
+    color: var(--color-white);
+    margin-bottom: 15px;
+}
+.pazar-vurgu a {
+    color: var(--color-light-blue);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.pazar-vurgu a:hover {
+    color: var(--color-white);
+}
+
+/* HAKKIMIZDA/İLETİŞİM ÖZEL STİLLERİ */
+
+.pazar-table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+
+.pazar-table th, .pazar-table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--color-light-gray);
+    text-align: left;
+    color: var(--color-gray);
+}
+
+.pazar-table th {
+    background-color: var(--color-light-gray);
+    color: var(--color-black);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.pazar-table tr:hover {
+    background-color: #fafafa;
+}
+
+.hakkimizda-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hakkimizda_arka_plan.jpg') no-repeat center center;
+    background-size: cover;
+    color: var(--color-white);
+    padding: 100px 0;
+    text-align: center;
+}
+.hakkimizda-hero h2 {
+    font-size: 48px;
+    color: var(--color-light-blue); 
+}
+.story-section {
+    padding: 80px 0;
+    background-color: transparent; /* Arka plan resmini göstermek için beyaz kaldırıldı */
+}
+.story-card {
+    border: 2px solid var(--color-light-gray);
+    padding: 30px;
+    margin-top: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: var(--color-white); /* Kart içini beyaz tutar */
+    cursor: pointer;
+}
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-accent); 
+}
+.story-card h3 {
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-flex {
+    display: flex;
+    gap: 50px;
+    padding: 50px 0;
+}
+.contact-form, .contact-info {
+    flex: 1;
+}
+.contact-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--color-black);
+}
+.contact-form input[type="text"], 
+.contact-form input[type="email"], 
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-gray);
+    border-radius: 0;
+    box-sizing: border-box;
+    background-color: var(--color-light-gray);
+}
+.contact-form textarea {
+    height: 150px;
+}
+.contact-info div {
+    margin-bottom: 30px;
+}
+.contact-info h3 {
+    color: var(--color-accent);
+    margin-bottom: 10px;
+}
+.map-placeholder {
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+    border: 2px solid var(--color-accent);
+    overflow: hidden;
+}
+
+.map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* FOOTER (Alt Bilgi) */
+footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* MOBİL UYUM (RESPONSIVE) KURALLARI */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    nav ul li a {
+        margin: 5px 0;
+    }
+    .hero {
+        padding: 100px 0;
+    }
+    .hero h1 {
+        font-size: 36px;
+    }
+    .hero p {
+        font-size: 18px;
+    }
+    .product-grid {
+        flex-direction: column; /* Ürünleri alt alta sırala */
+    }
+    .product-item {
+        flex: 1 1 100%;
+    }
+    .contact-flex {
+        flex-direction: column; /* İletişim detayları alt alta */
+    }
+    .pazar-table {
+        width: 100%;
+    }
+    .pazar-table th, .pazar-table td {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
